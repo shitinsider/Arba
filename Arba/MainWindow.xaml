@@ -1,0 +1,31 @@
+﻿<Window x:Class="ArbitrageBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Arbitrage Bot" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Порог спреда (%):" />
+            <TextBox x:Name="txtSpreadThreshold" Width="200" Margin="0,5,0,10" Text="1.0" />
+
+            <TextBlock Text="Интервал проверки (в секундах):" />
+            <TextBox x:Name="txtPollingInterval" Width="200" Margin="0,5,0,10" Text="10" />
+
+            <TextBlock Text="Количество SOL:" />
+            <TextBox x:Name="txtSolAmount" Width="200" Margin="0,5,0,10" Text="0.1" />
+
+            <TextBlock Text="Проскальзывание (%):" />
+            <TextBox x:Name="txtSlippage" Width="200" Margin="0,5,0,10" Text="0.5" />
+
+            <TextBlock Text="Приватный ключ:" />
+            <PasswordBox x:Name="txtPrivateKey" Width="200" Margin="0,5,0,10" PasswordChanged="TxtPrivateKey_PasswordChanged" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                <Button x:Name="btnStart" Content="Запуск" Width="100" Click="BtnStart_Click" />
+                <Button x:Name="btnStop" Content="Остановить" Width="100" Margin="10,0,0,0" Click="BtnStop_Click" />
+            </StackPanel>
+
+            <TextBlock Text="Лог:" Margin="0,10,0,5" />
+            <TextBox x:Name="txtLogs" Width="760" Height="200" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        </StackPanel>
+    </Grid>
+</Window>
